@@ -28,9 +28,6 @@ author:
   github: exaluc
   
 
-# Build settings
-theme: boucle
-
 plugins:
   - jekyll-feed
   - jekyll-postcss
