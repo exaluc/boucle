@@ -4,12 +4,16 @@
   "description": "simple tailwindcss blog for jekyll",
   "main": "postcss.config.js",
   "scripts": {
-    "dev": "bundle exec jekyll serve --livereload"
+    "dev": "bundle exec jekyll serve --livereload",
+    "build:css": "postcss ./assets/scss/tailwind.scss -o ./assets/css/main.css",
+    "start": "npm run build:css && jekyll serve",
+    "build": "npm run build:css && jekyll build"
   },
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.25",
     "postcss-cli": "^10.1.0",
+    "postcss-scss": "^4.0.6",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
