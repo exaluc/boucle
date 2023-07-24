@@ -34,7 +34,11 @@ layout: default
 
         <article class="flex flex-col shadow my-4 ">
             {%- if page.image -%}
+            {% if page.ext_img %}
             <img src="{{ page.image }}">
+            {% else %}
+            <img src="{{ site.baseurl }}{{ page.image }}">
+            {% endif %}
             {% endif %}
             <div class="flex flex-col justify-start p-6">
                 <div class="flex flex-wrap">

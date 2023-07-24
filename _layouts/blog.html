@@ -11,8 +11,13 @@ layout: default
       class="article flex flex-col my-4 bg-white text-black dark:bg-black dark:border-gray-700 shadow-md dark:text-white">
       <!-- Article Image -->
       {%- if post.image -%}
-      <a href="{{ post.url }}" class="hover:opacity-75">
+      <a href="{{ site.baseurl }}{{ post.url }}" class="hover:opacity-75">
+        {% if post.ext_img %}
         <img src="{{ post.image }}">
+        {% else %}
+        <img src="{{ site.baseurl }}{{ post.image }}">
+        {% endif %}
+        
       </a>
       {%-endif-%}
       <div class="flex flex-col justify-start p-6">
