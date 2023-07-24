@@ -1,0 +1,104 @@
+---
+layout: default
+---
+<div class="container mx-auto flex flex-wrap py-6">
+
+  <!-- Posts Section -->
+  <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+
+    {%- for post in paginator.posts limit: paginator.number_of_posts -%}
+    <article
+      class="article flex flex-col my-4 bg-white text-black dark:bg-black dark:border-gray-700 shadow-md dark:text-white">
+      <!-- Article Image -->
+      {%- if post.image -%}
+      <a href="{{ post.url }}" class="hover:opacity-75">
+        <img src="{{ post.image }}">
+      </a>
+      {%-endif-%}
+      <div class="flex flex-col justify-start p-6">
+        <div class="flex flex-wrap">
+          {%- for category in post.categories -%}
+          <a href="{{ category | prepend: " /category/" }}"
+            class="text-blue-700 dark:hover:text-white text-sm font-bold uppercase pb-4 mr-6">{{ category }} </a>
+          {%- endfor -%}
+        </div>
+        <a href="{{ post.url }}" class="text-3xl font-bold hover:text-gray-700 dark:hover:text-white pb-4">{{ post.title }}</a>
+        <div class="flex items-center text-sm pb-3">
+          Published  {% include date.html date=post.date %}  
+        </div>
+
+        <a href="{{ post.url }}" class="pb-6">{{ post.content | markdownify | strip_html | truncatewords: 50 }}..</a>
+        <a href="{{ post.url }}" class="uppercase text-gray-400 hover:text-black dark:hover:text-white">Continue Reading <i
+            class="fas fa-arrow-right"></i></a>
+      </div>
+
+
+    </article>
+
+
+    {%- endfor -%}
+    <div class="flex items-center py-8">
+      {% include paginate.html %}
+    </div>
+
+  </section>
+
+  <!-- Sidebar Section -->
+  <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
+
+    <div class="w-full shadow flex flex-col dark:bg-black my-4 p-6 custom-shadow">
+      {% include trending-tags.html %}
+      {% if trending_tags.size > 0 %}
+      <p class="text-xl font-semibold">Trending tags</p>
+
+      <div class="rounded-lg">
+        <div class="p-6">
+          <div id="access-tags">
+            <div class="flex flex-wrap mt-3 mb-1 mr-3">
+
+              {% for tag_name in trending_tags %}
+              {% assign url = tag_name | slugify | url_encode | prepend: "/tag/" | append: "/" %}
+              <a class="inline-block bg-gray-200 dark:bg-gray-800 rounded-full px-3 py-1 text-sm font-semibold dark:text-gray-200 mr-2 mb-2"
+                href="{{ url | relative_url }}">{{ tag_name }}</a>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+      <a href="/tags"
+        class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+        All tags
+      </a>
+    </div>
+
+    <!-- Store the URLs of the currently displayed posts in a list -->
+    {% assign current_post_urls = "" | split: "|" %}
+    {% for post in paginator.posts %}
+    {% assign current_post_urls = current_post_urls | push: post.url %}
+    {% endfor %}
+
+    <!-- Iterate over all posts and display only those that are not currently displayed -->
+    <div class="w-full shadow dark:bg-black custom-shadow flex flex-col my-4 p-6">
+      <p class="text-xl font-semibold pb-5">Other Posts</p>
+      <div class="flex flex-col gap-3">
+        {% assign count = 0 %}
+        {% for post in site.posts %}
+        {% unless current_post_urls contains post.url %}
+        {% if count < 9 %} <a class="hover:underline dark:hover:text-white" href="{{ post.url }}">{{ post.title }}</a>
+          {% assign count = count | plus: 1 %}
+        {% else %}
+        {% break %}
+        {% endif %}
+        {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+
+
+
+  </aside>
+
+</div>

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div id="page-tag">
+  <a class="text-lg font-bold">
+    {% include go-back.html %}
+    <i class="fa fa-tag fa-fw text-muted"></i>
+    {{ page.title }}
+    <span class="lead text-muted pl-2">{{ page.posts | size }}</span>
+  </a>
+  <ul class="post-content pl-0">
+    {% for post in page.posts %}
+    <li class="d-flex justify-content-between pl-md-3 pr-md-3 my-1">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="dash flex-grow-1"></span>
+      <span class="text-muted small"> {% include date.html date=post.date %} </span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

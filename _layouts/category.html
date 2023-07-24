@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div id="page-category" class="container mx-auto max-w-3xl">
+  <h1 class="flex items-center text-lg font-bold my-2">
+    {% include go-back.html %}
+    <i class="far fa-folder-open text-gray-500"></i>
+    <span class="ml-2">{{ page.title }}</span>
+    <span class="lead text-gray-500 ml-2">{{ page.posts | size }}</span>
+  </h1>
+  <button onclick="goBack()">Go Back</button>
+
+  <ul class="list-none p-0">
+    {% for post in page.posts %}
+    <li class="flex justify-between items-center py-1">
+      <a href="{{ post.url | relative_url }}" class="font-medium">{{ post.title }}</a>
+      <span class="dash flex-grow"></span>
+      <span class="text-gray-500 text-sm">{% include date.html date=post.date %}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

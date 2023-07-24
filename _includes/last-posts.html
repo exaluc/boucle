@@ -1,0 +1,5 @@
+{% assign posts_to_exclude = "" | split: "|" %}
+{% for post in paginator.posts limit: paginator.number_of_posts %}
+  {% assign posts_to_exclude = posts_to_exclude | push: post.url %}
+{% endfor %}
+{% assign all_posts = site.posts | where_exp:"post", "posts_to_exclude contains post.url == false" %}

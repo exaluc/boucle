@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<main class="bg-white text-black dark:bg-black dark:text-white p-4 flex flex-wrap justify-center">
+<div class="container mx-auto max-w-3xl">
+  {% include go-back.html %}
+  {% assign sort_categories = site.categories | sort %}
+  {% for category in sort_categories %}
+    {% assign category_name = category | first %}
+    {% assign posts_of_category = category | last %}
+    {% assign first_post = posts_of_category | first %}
+    {% if category_name == first_post.categories[0] %}
+      <div class="my-6">
+        <!-- top-category -->
+        <div class="flex justify-between items-center py-2 border-b border-gray-200">
+          <a href="{{ site.baseurl }}/category/{{ category_name | slugify | url_encode }}/" class="text-lg font-bold">
+            {{ category_name }}
+          </a>
+          <!-- content count -->
+          {% assign top_posts_size = site.categories[category_name] | size %}
+          <span class="text-gray-500 text-sm">
+            {{ top_posts_size }} post{% if top_posts_size > 1 %}s{% endif %}
+          </span>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+</main>

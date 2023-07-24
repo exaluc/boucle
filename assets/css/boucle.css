@@ -1,0 +1,477 @@
+html {
+  box-sizing: border-box
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit
+}
+
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+p {
+  white-space: pre-line;
+  margin-bottom: 10px;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.theme-icon {
+  display: none;
+  width: 24px;
+  height: 24px;
+}
+
+.light-mode #dark-icon,
+.dark-mode #light-icon {
+  display: inline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block
+}
+
+summary {
+  display: list-item
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block
+}
+
+progress {
+  vertical-align: baseline
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0
+}
+
+[hidden],
+template {
+  display: none
+}
+
+a {
+  background-color: transparent
+}
+
+a:active,
+a:hover {
+  outline-width: 0
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted
+}
+
+b,
+strong {
+  font-weight: bolder
+}
+
+dfn {
+  font-style: italic
+}
+
+mark {
+  background: #ff0;
+  color: #000
+}
+
+small {
+  font-size: 80%
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline
+}
+
+sub {
+  bottom: -0.25em
+}
+
+sup {
+  top: -0.5em
+}
+
+figure {
+  margin: 1em 40px
+}
+
+img {
+  border-style: none
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible
+}
+
+button,
+input,
+select,
+textarea,
+optgroup {
+  font: inherit;
+  margin: 0
+}
+
+optgroup {
+  font-weight: bold
+}
+
+button,
+input {
+  overflow: visible
+}
+
+button,
+select {
+  text-transform: none
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: .35em .625em .75em
+}
+
+legend {
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal
+}
+
+textarea {
+  overflow: auto
+}
+
+[type=checkbox],
+[type=radio] {
+  padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit
+}
+
+/* End extract */
+html,
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5
+}
+
+html {
+  overflow-x: hidden
+}
+
+h1 {
+  font-size: 36px
+}
+
+h2 {
+  font-size: 30px
+}
+
+h3 {
+  font-size: 24px
+}
+
+h4 {
+  font-size: 20px
+}
+
+h5 {
+  font-size: 18px
+}
+
+h6 {
+  font-size: 16px
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px 0
+}
+
+img {
+  vertical-align: middle
+}
+
+a {
+  color: inherit
+}
+
+.dark .custom-shadow {
+  box-shadow: 0 0 4px #818181;
+}
+
+.dark .custom-shadow {
+  --tw-shadow: 0 0px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -2px rgba(255, 255, 255, 0.1);
+  --tw-shadow-colored: 0 0px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #ffffff00), var(--tw-ring-shadow, 0 0 #ffffff00), var(--tw-shadow);
+}
+
+.dark .custom-black-article {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+/* .dark a {
+  background-color: rgba(0, 0, 0, 0.95);
+} */
+
+.dark .article{
+  --tw-shadow: 0 0px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -2px rgba(255, 255, 255, 0.1);
+  --tw-shadow-colored: 0 0px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #ffffff00), var(--tw-ring-shadow, 0 0 #ffffff00), var(--tw-shadow);
+}
+
+:is(.dark .dark\:text-white) {
+  --tw-text-opacity: 1;
+  color: #cacaca;
+}
+
+.custom-border-t {
+  border-top-width: 0.2px;
+  border-color: #2d2d2d66;
+}
+.custom-border-b {
+  border-bottom-width: 0.2px;
+  border-color: #2d2d2d66;
+}
+
+.sticky {
+  position: -webkit-sticky;  /* for Safari */
+  position: sticky;
+  top: 0;   /* threshold from top of viewport */
+}
+
+.order-first {
+  order: 1;
+}
+.order-last {
+  order: 2;
+}
+
+/* The Modal (background) */
+.search-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.search-modal-content {
+  position: fixed; /* Fix the modal content */
+  top: 0; /* Top position */
+  left: 0; /* Left position */
+  right: 0; /* Right position */
+  bottom: 0; /* Bottom position */
+  /* background-color: #fefefe; */
+  overflow: auto; /* Enable scroll if needed */
+  box-sizing: border-box; /* So padding and border don't increase height */
+}
+
+/* Search Wrapper */
+#search-wrapper {
+  max-width: 80%; /* Adjust the width as per your design */
+  margin: 5% auto; /* Center the wrapper */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Search Input */
+#search-input {
+  position: sticky;
+  top: 0; /* Sticks to the top */
+  z-index: 1; /* On top of other elements */
+  width: 100%; /* Full width */
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #000; /* Define border style, width, and color */
+}
+
+/* Search Input */
+.dark #search-input {
+  background-color: #000;
+  border: 1px solid #fff; /* Define border style, width, and color */
+}
+
+
+/* Close Button */
+.close {
+  position: absolute; /* Position it absolutely */
+  top: 20px; /* Adjust as per your design */
+  right: 20px; /* Adjust as per your design */
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Search Results */
+#search-results {
+  width: 100%; /* Full width */
+  overflow-y: auto; /* Enable vertical scroll */
+  margin-top: 10px;
+}
+
+.search-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.result-title {
+  font-size: 1.1em;
+}
+
+.result-date {
+  color: #666;
+}
+
+
+/* This class will be added to the body when the modal is open to disable scrolling */
+.no-scroll {
+  overflow: hidden;
+}
+
+.toc__menu a.active {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.325);
+}
+
+.dark .toc__menu a.active {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.toc__menu a.read {
+  color: rgba(0, 0, 0, 0.325);
+}
+
+.dark .toc__menu a.read {
+  color: rgba(240, 240, 240, 0.325);
+}
+
+.toc__menu li li {
+  padding-left: 10px;
+}
+
+.toc__menu li li li {
+  padding-left: 20px;
+}
+
+.toc__menu li li li li {
+  padding-left: 30px;
+}

@@ -1,0 +1,26 @@
+<!--
+  Navigation buttons at the bottom of the post.
+-->
+  {% if page.previous.url %}
+  <a href="{{ site.baseurl }}{{ page.previous.url }}" class="w-1/2 shadow hover:shadow-md text-left p-6">
+    <p class="text-lg text-blue-800 font-bold flex items-center"><i class="fas fa-arrow-left pr-1"></i> Previous</p>
+    <p class="pt-2">{{ page.previous.title }}</p>
+  </a>
+  {% else %}
+  <span class="w-1/2 shadow hover:shadow-md text-left p-6">
+    <p class="text-lg text-blue-800 font-bold flex items-center"></p>
+  </span>
+  {% endif %}
+
+  {% if page.next.url %}
+  <a href="{{ site.baseurl }}{{page.next.url}}" class="w-1/2 shadow hover:shadow-md text-right p-6">
+    <p class="text-lg text-blue-800 font-bold flex items-center justify-end">Next <i class="fas fa-arrow-right pl-1"></i></p>
+    <p class="pt-2">{{page.next.title}}</p>
+  </a>
+  {% else %}
+  <span class="w-1/2 shadow hover:shadow-md text-left p-6">
+    <p class="text-lg text-blue-800 font-bold flex items-center"></p>
+  </span>
+  {% endif %}
+
+

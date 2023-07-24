@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div id="tags" >
+{% include go-back.html %}
+
+<div class="flex flex-wrap mt-4 mb-4 xl:mt-8 xl:mb-8 container mx-auto max-w-2xl">
+  
+  {% assign tags = "" | split: "" %}
+  {% for t in site.tags %}
+    {% assign tags = tags | push: t[0] %}
+  {% endfor %}
+
+  {% assign sorted_tags = tags | sort_natural %}
+
+  {% for t in sorted_tags %}
+    <div>
+      <a class="tag tags-btn inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2" href="{{ site.baseurl }}/tag/{{ t | slugify | url_encode }}/">{{ t }} <span class="text-gray-500">{{ site.tags[t].size }}</span></a>
+    </div>
+  {% endfor %}
+
+</div>
+
+</div>

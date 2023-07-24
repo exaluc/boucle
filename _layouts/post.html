@@ -1,0 +1,80 @@
+---
+layout: default
+---
+<div id="progress-bar" class="bg-black dark:bg-white h-1 fixed top-0 left-0 z-50 transition-all duration-100"></div>
+<div class="container mx-auto flex flex-wrap py-6">
+
+    <!-- Sidebar Section -->
+    <aside class="w-full md:w-1/3 flex flex-col items-center px-3 md:order-last">
+        {% if page.toc %}
+        <div
+            class="w-full shadow flex flex-col my-4 p-6 bg-white text-black dark:bg-black dark:border-gray-700 shadow-md dark:text-white {% if page.toc_sticky %}sticky{% endif %}">
+            <header>
+                <h4 class="font-bold text-xl mb-2"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{
+                    page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
+            </header>
+            {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
+        </div>
+        {% endif %}
+        {% if page.toc_sticky %}
+        {% else %}
+        <div class="w-full shadow flex flex-col my-4 p-6">
+            <p class="text-xl font-semibold pb-5">Related posts</p>
+            {% for post in site.related_posts limit:7 offset:1 %}
+            <li>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </aside>
+
+    <!-- Post Section -->
+    <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+
+        <article class="flex flex-col shadow my-4 ">
+            {%- if page.image -%}
+            <img src="{{ page.image }}">
+            {% endif %}
+            <div class="flex flex-col justify-start p-6">
+                <div class="flex flex-wrap">
+                    {%- for category in page.categories -%}
+                    <a href="{{ category | prepend: " /category/" }}"
+                        class="text-blue-700 text-sm font-bold uppercase pb-4 mr-6">{{ category }} </a>
+                    {%- endfor -%}
+                </div>
+                <a class="text-3xl font-bold hover:text-gray-700 pb-4">{{ page.title }}</a>
+                <div class="flex items-center text-sm pb-3">
+                    Published  {% include date.html date=page.date %}  
+                  </div>
+                {{ content }}
+
+            </div>
+        </article>
+
+        <div class="w-full flex pt-6">
+            {% include post-nav.html %}
+        </div>
+
+        <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow mt-10 mb-10 p-6">
+            <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
+                <img src="{{ site.author.image }}"
+                    class="rounded-full shadow h-32 w-32">
+            </div>
+            <div class="flex-1 flex flex-col justify-center md:justify-start">
+                <p class="font-semibold text-2xl">{{ site.author.name }}</p>
+                <p class="pt-2">{{ site.author.description }}</p>
+                <div class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
+                    <a target="_blank" href="https://github.com/{{ site.author.github }}">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="pl-4" target="_blank" href="https://twitter.com/{{ site.author.twitter }}">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="/assets/js/post.js"></script>

@@ -1,0 +1,90 @@
+title: boucle ∞
+email: your-email@example.com
+description: >-
+  Awesome description
+seo_keywords: linux, bash, data, mlops, design, static, jekyll, blog
+baseurl: null
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+twitter_url: example_site
+github_url: example_site
+linkedin_url: example_site
+
+
+menu_categories:
+  - devops
+  - linux
+  - data
+  - network
+
+permalink: '/:title/'
+
+author:
+  name: Lucian
+  image: https://avatars.githubusercontent.com/u/42606?v=4
+  description: >-
+    Open source enthousiast.
+  twitter: exaluc
+  github: exaluc
+  
+
+# Build settings
+theme: boucle
+
+plugins:
+  - jekyll-feed
+  - jekyll-postcss
+
+postcss:
+  cache: false
+
+include:
+  - _pages
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tag/:name/
+    category: /category/:name/
+
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 6
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - bin
+  - package.json
+  - package-lock.json
+  - yarn.lock

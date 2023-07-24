@@ -1,0 +1,428 @@
+code {
+    font-size: 87.5%;
+    color: var(--albastru-deschis);
+    word-wrap: break-word;
+}
+
+table.rouge-table td.rouge-gutter {
+    padding-right: .5rem;
+    border-right: 1px solid #adb5bd;
+}
+
+table.rouge-table td.rouge-code {
+    padding-left: .5rem;
+}
+
+
+figure.highlight,
+pre.highlight {
+    padding: 1rem 1.5rem;
+    /* margin: 1.5rem 0; */
+    overflow-x: auto;
+    line-height: 1.4rem;
+    position: relative;
+}
+
+.highlighter-rouge {
+    font-weight: 300;
+    position: relative;
+    box-shadow: 0px 1px 1px rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+p code.highlighter-rouge,
+p kbd {
+    font-size: 1rem;
+    background-color: rgba(240, 246, 252, 0.15);
+    padding: 2px 4px;
+    word-break: break-word;
+}
+
+kbd {
+    border: 1px solid #343a40;
+}
+
+/* "data-lang" should be injected by JavaScript */
+/* figure.highlight::before, div.highlighter-rouge::before {
+    font-family: $font-family-monospace;
+    content: attr(data-lang);
+    font-size: .9rem;
+    color: $gray-200;
+    position: absolute;
+    display: block;
+    height: 1rem;
+    right: .5rem;
+    z-index: 5;
+}
+figure.highlight::before {
+    margin-top: -1rem;
+}
+*/
+.rouge-table .code pre {
+    overflow: hidden;
+}
+
+.rouge-table .code pre {
+    overflow: hidden;
+}
+
+table.rouge-table,
+table.rouge-table tr,
+table.rouge-table td,
+table.rouge-table pre {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+table.rouge-table td.gutter {
+    padding-right: 0.5rem;
+    border-right: 1px solid #adb5bd;
+}
+
+table.rouge-table td.code {
+    padding-left: 0.5rem;
+}
+
+figure pre {
+    margin-bottom: 0;
+}
+
+.lineno {
+    text-align: right;
+}
+
+.highlight,
+.highlight pre,
+.highlight table {
+    background: #0B1A2F;
+    color: #e9ecef;
+    font-size: 1rem;
+}
+
+.highlight .hll {
+    background-color: #153D52;
+}
+
+.highlight .c {
+    color: #969896;
+}
+
+/* Comment */
+.highlight .err {
+    color: #c66;
+}
+
+/* Error */
+.highlight .k {
+    color: #b294bb;
+}
+
+/* Keyword */
+.highlight .l {
+    color: #de935f;
+}
+
+/* Literal */
+.highlight .n,
+.highlight .h {
+    color: #fff;
+}
+
+/* Name */
+.highlight .o {
+    color: #8abeb7;
+}
+
+/* Operator */
+.highlight .p {
+    color: #fff;
+}
+
+/* Punctuation */
+.highlight .cm {
+    color: #969896;
+}
+
+/* Comment.Multiline */
+.highlight .cp {
+    color: #969896;
+}
+
+/* Comment.Preproc */
+.highlight .c1 {
+    color: #969896;
+}
+
+/* Comment.Single */
+.highlight .cs {
+    color: #969896;
+}
+
+/* Comment.Special */
+.highlight .gd {
+    color: #c66;
+}
+
+/* Generic.Deleted */
+.highlight .ge {
+    font-style: italic;
+}
+
+/* Generic.Emph */
+.highlight .gh {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Generic.Heading */
+.highlight .gi {
+    color: #b5bd68;
+}
+
+/* Generic.Inserted */
+.highlight .gp {
+    color: #969896;
+    font-weight: bold;
+}
+
+/* Generic.Prompt */
+.highlight .gs {
+    font-weight: bold;
+}
+
+/* Generic.Strong */
+.highlight .gu {
+    color: #8abeb7;
+    font-weight: bold;
+}
+
+/* Generic.Subheading */
+.highlight .kc {
+    color: #b294bb;
+}
+
+/* Keyword.Constant */
+.highlight .kd {
+    color: #b294bb;
+}
+
+/* Keyword.Declaration */
+.highlight .kn {
+    color: #8abeb7;
+}
+
+/* Keyword.Namespace */
+.highlight .kp {
+    color: #b294bb;
+}
+
+/* Keyword.Pseudo */
+.highlight .kr {
+    color: #b294bb;
+}
+
+/* Keyword.Reserved */
+.highlight .kt {
+    color: #f0c674;
+}
+
+/* Keyword.Type */
+.highlight .ld {
+    color: #b5bd68;
+}
+
+/* Literal.Date */
+.highlight .m {
+    color: #de935f;
+}
+
+/* Literal.Number */
+.highlight .s {
+    color: #b5bd68;
+}
+
+/* Literal.String */
+.highlight .na {
+    color: #81a2be;
+}
+
+/* Name.Attribute */
+.highlight .nb {
+    color: #fff;
+}
+
+/* Name.Builtin */
+.highlight .nc {
+    color: #f0c674;
+}
+
+/* Name.Class */
+.highlight .no {
+    color: #c66;
+}
+
+/* Name.Constant */
+.highlight .nd {
+    color: #8abeb7;
+}
+
+/* Name.Decorator */
+.highlight .ni {
+    color: #fff;
+}
+
+/* Name.Entity */
+.highlight .ne {
+    color: #c66;
+}
+
+/* Name.Exception */
+.highlight .nf {
+    color: #81a2be;
+}
+
+/* Name.Function */
+.highlight .nl {
+    color: #fff;
+}
+
+/* Name.Label */
+.highlight .nn {
+    color: #f0c674;
+}
+
+/* Name.Namespace */
+.highlight .nx {
+    color: #81a2be;
+}
+
+/* Name.Other */
+.highlight .py {
+    color: #fff;
+}
+
+/* Name.Property */
+.highlight .nt {
+    color: #8abeb7;
+}
+
+/* Name.Tag */
+.highlight .nv {
+    color: #c66;
+}
+
+/* Name.Variable */
+.highlight .ow {
+    color: #8abeb7;
+}
+
+/* Operator.Word */
+.highlight .w {
+    color: #fff;
+}
+
+/* Text.Whitespace */
+.highlight .mf {
+    color: #de935f;
+}
+
+/* Literal.Number.Float */
+.highlight .mh {
+    color: #de935f;
+}
+
+/* Literal.Number.Hex */
+.highlight .mi {
+    color: #de935f;
+}
+
+/* Literal.Number.Integer */
+.highlight .mo {
+    color: #de935f;
+}
+
+/* Literal.Number.Oct */
+.highlight .sb {
+    color: #b5bd68;
+}
+
+/* Literal.String.Backtick */
+.highlight .sc {
+    color: #fff;
+}
+
+/* Literal.String.Char */
+.highlight .sd {
+    color: #969896;
+}
+
+/* Literal.String.Doc */
+.highlight .s2 {
+    color: #b5bd68;
+}
+
+/* Literal.String.Double */
+.highlight .se {
+    color: #de935f;
+}
+
+/* Literal.String.Escape */
+.highlight .sh {
+    color: #b5bd68;
+}
+
+/* Literal.String.Heredoc */
+.highlight .si {
+    color: #de935f;
+}
+
+/* Literal.String.Interpol */
+.highlight .sx {
+    color: #b5bd68;
+}
+
+/* Literal.String.Other */
+.highlight .sr {
+    color: #b5bd68;
+}
+
+/* Literal.String.Regex */
+.highlight .s1 {
+    color: #b5bd68;
+}
+
+/* Literal.String.Single */
+.highlight .ss {
+    color: #b5bd68;
+}
+
+/* Literal.String.Symbol */
+.highlight .bp {
+    color: #fff;
+}
+
+/* Name.Builtin.Pseudo */
+.highlight .vc {
+    color: #c66;
+}
+
+/* Name.Variable.Class */
+.highlight .vg {
+    color: #c66;
+}
+
+/* Name.Variable.Global */
+.highlight .vi {
+    color: #c66;
+}
+
+/* Name.Variable.Instance */
+.highlight .il {
+    color: #de935f;
+}
+
+code pre {
+    white-space: pre-wrap !important;
+    overflow-x: auto !important;
+}

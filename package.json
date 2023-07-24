@@ -1,0 +1,35 @@
+{
+  "name": "boucle",
+  "version": "1.0.0",
+  "description": "simple tailwindcss blog for jekyll",
+  "main": "postcss.config.js",
+  "scripts": {
+    "dev": "bundle exec jekyll serve --livereload"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.25",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "cssnano": "^6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exaluc/boucle.git"
+  },
+  "keywords": [
+    "static",
+    "generator",
+    "jekyll",
+    "html",
+    "tailwindcss"
+  ],
+  "author": "exaluc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/exaluc/boucle/issues"
+  },
+  "homepage": "https://github.com/exaluc/boucle#readme"
+}

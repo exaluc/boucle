@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.seo_keywords | join: ', ' }}">
+    <meta name="author" content="{{ site.author.name }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" content="{{ page.image | default: site.author.image }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+    <meta property="twitter:title" content="{{ page.title }}">
+    <meta property="twitter:description" content="{{ site.description }}">
+    <meta property="twitter:image" content="{{ page.image | default: site.author.image }}">
+
+    <link href="{{ '/assets/css/main.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/assets/css/boucle.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/assets/css/highlight.css' | relative_url }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+
+
+<body class="bg-white text-black dark:bg-black dark:text-white">
+    {% include header.html %}
+
+    <main class="bg-white text-black dark:bg-black dark:text-white p-4 flex flex-wrap justify-center">
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+    {% include search.html %}
+    {% include js.html %}
+</body>
+
+</html>

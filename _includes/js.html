@@ -1,0 +1,142 @@
+<script>
+    var savedTheme = localStorage.getItem('theme-boucle') || 'light';
+    document.body.className = savedTheme;
+
+    var themeSwitch = document.getElementById('theme-switch');
+    var lightIcon = document.getElementById('light-icon');
+    var darkIcon = document.getElementById('dark-icon');
+
+    updateIconVisibility();
+
+    themeSwitch.addEventListener('click', function () {
+        var newTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+        document.body.className = newTheme;
+        localStorage.setItem('theme-boucle', newTheme);
+        updateIconVisibility();
+    });
+
+    function updateIconVisibility() {
+        var isDarkMode = document.body.classList.contains('dark');
+        lightIcon.style.display = isDarkMode ? 'none' : 'block';
+        darkIcon.style.display = isDarkMode ? 'block' : 'none';
+    }
+
+    var modal = document.getElementById("search-modal");
+    var btn = document.getElementById("search-button");
+    var span = document.getElementsByClassName("close")[0];
+
+
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+        document.documentElement.style.overflow = 'hidden';
+
+        var searchInput = document.getElementById("search-input");
+        searchInput.focus();
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+        document.documentElement.style.overflow = 'auto';
+        resetSearchModal();
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            document.documentElement.style.overflow = 'auto';
+            resetSearchModal();
+        }
+    }
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === "Escape") {
+            modal.style.display = "none";
+            document.documentElement.style.overflow = 'auto';
+            resetSearchModal();
+        }
+    });
+
+
+    var data = [];
+    fetch('/search-blog.json')
+        .then(response => response.json())
+        .then(json => data = json)
+        .catch(error => console.error('Error:', error));
+
+    function search(query) {
+        query = query.toLowerCase();
+        var results = data.filter(function (post) {
+            return post.title.toLowerCase().includes(query) ||
+                post.category.toLowerCase().includes(query);
+        });
+        return results;
+    }
+
+    function resetSearchModal() {
+        document.getElementById('search-input').value = '';
+        var container = document.getElementById('search-results');
+        container.innerHTML = '';
+        container.style.display = 'none';
+        var modalContent = document.querySelector('.search-modal-content');
+        modalContent.style.justifyContent = 'center';
+        modalContent.style.flexDirection = 'column';
+    }
+
+    document.querySelector('.close').addEventListener('click', resetSearchModal);
+
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    function formatDate(dateString) {
+        // Split date/time and timezone
+        var dateTimeParts = dateString.split(' ');
+
+        // Replace space with 'T' in the date/time part
+        var isoDateTime = dateTimeParts[0].replace(' ', 'T');
+
+        // Parse date/time
+        var date = new Date(isoDateTime);
+
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+
+        return day + ' ' + months[monthIndex] + ' ' + year;
+    }
+
+
+    function handleSearchInput() {
+        var query = document.getElementById('search-input').value;
+        var modalContent = document.querySelector('.search-modal-content');
+        if (!query) {
+            resetSearchModal();
+            modalContent.style.justifyContent = 'center';
+            return;
+        }
+        var results = search(query);
+        var container = document.getElementById('search-results');
+        container.innerHTML = '';
+        if (results.length === 0) {
+            container.innerHTML = '<p>No results found</p>';
+            return;
+        }
+        results.forEach(function (result) {
+            var resultElement = document.createElement('div');
+            resultElement.className = "search-result";
+            resultElement.innerHTML = `
+            <a class="result-title" href="${result.url}">${result.title}</a>
+            <p class="result-date">${formatDate(result.date)}</p>
+        `;
+            container.appendChild(resultElement);
+        });
+
+        modalContent.style.justifyContent = 'flex-start';
+        container.style.display = 'block';
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+
+</script>
