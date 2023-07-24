@@ -59,7 +59,7 @@
 
 
     var data = [];
-    fetch('/search-blog.json')
+    fetch('{{ site.baseurl }}/search-blog.json')
         .then(response => response.json())
         .then(json => data = json)
         .catch(error => console.error('Error:', error));

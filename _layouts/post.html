@@ -22,7 +22,7 @@ layout: default
             <p class="text-xl font-semibold pb-5">Related posts</p>
             {% for post in site.related_posts limit:7 offset:1 %}
             <li>
-                <a href="{{ post.url }}">{{ post.title }}</a>
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             </li>
             {% endfor %}
         </div>
@@ -34,12 +34,12 @@ layout: default
 
         <article class="flex flex-col shadow my-4 ">
             {%- if page.image -%}
-            <img src="{{ page.image }}">
+            <img src="{{ site.baseurl }}{{ page.image }}">
             {% endif %}
             <div class="flex flex-col justify-start p-6">
                 <div class="flex flex-wrap">
                     {%- for category in page.categories -%}
-                    <a href="{{ category | prepend: " /category/" }}"
+                    <a href="{{ site.baseurl }}{{ category | prepend: " /category/" }}"
                         class="text-blue-700 text-sm font-bold uppercase pb-4 mr-6">{{ category }} </a>
                     {%- endfor -%}
                 </div>
@@ -77,4 +77,4 @@ layout: default
     </section>
 </div>
 
-<script src="/assets/js/post.js"></script>
+<script src="{{ site.baseurl }}/assets/js/post.js"></script>

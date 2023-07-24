@@ -18,17 +18,17 @@ layout: default
       <div class="flex flex-col justify-start p-6">
         <div class="flex flex-wrap">
           {%- for category in post.categories -%}
-          <a href="{{ category | prepend: " /category/" }}"
+          <a href="{{ site.baseurl }}{{ category | prepend: "/category/" }}"
             class="text-blue-700 dark:hover:text-white text-sm font-bold uppercase pb-4 mr-6">{{ category }} </a>
           {%- endfor -%}
         </div>
-        <a href="{{ post.url }}" class="text-3xl font-bold hover:text-gray-700 dark:hover:text-white pb-4">{{ post.title }}</a>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="text-3xl font-bold hover:text-gray-700 dark:hover:text-white pb-4">{{ post.title }}</a>
         <div class="flex items-center text-sm pb-3">
           Published  {% include date.html date=post.date %}  
         </div>
 
-        <a href="{{ post.url }}" class="pb-6">{{ post.content | markdownify | strip_html | truncatewords: 50 }}..</a>
-        <a href="{{ post.url }}" class="uppercase text-gray-400 hover:text-black dark:hover:text-white">Continue Reading <i
+        <a href="{{ site.baseurl }}{{ post.url }}" class="pb-6">{{ post.content | markdownify | strip_html | truncatewords: 50 }}..</a>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="uppercase text-gray-400 hover:text-black dark:hover:text-white">Continue Reading <i
             class="fas fa-arrow-right"></i></a>
       </div>
 
@@ -68,7 +68,7 @@ layout: default
       </div>
 
       {% endif %}
-      <a href="/tags"
+      <a href="{{ site.baseurl }}/tags"
         class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
         All tags
       </a>
@@ -87,7 +87,7 @@ layout: default
         {% assign count = 0 %}
         {% for post in site.posts %}
         {% unless current_post_urls contains post.url %}
-        {% if count < 9 %} <a class="hover:underline dark:hover:text-white" href="{{ post.url }}">{{ post.title }}</a>
+        {% if count < 9 %} <a class="hover:underline dark:hover:text-white" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
           {% assign count = count | plus: 1 %}
         {% else %}
         {% break %}

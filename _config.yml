@@ -3,7 +3,7 @@ email: your-email@example.com
 description: >-
   Sparking curiosity, facilitating knowledge-sharing, and fostering community interaction.
 seo_keywords: linux, bash, data, mlops, design, static, jekyll, blog
-baseurl: null
+baseurl: "/boucle"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 twitter_url: example_site

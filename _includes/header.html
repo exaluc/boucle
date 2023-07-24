@@ -3,7 +3,7 @@
     <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
         <nav>
             <ul class="flex items-center justify-between font-bold uppercase no-underline">
-                <li><a class="hover:underline px-4" href="/"><i class="fas fa-home"></i></a></li>
+                <li><a class="hover:underline px-4" href="{{ site.baseurl }}/"><i class="fas fa-home"></i></a></li>
             </ul>
         </nav>
 
@@ -22,7 +22,7 @@
 <!-- Text Header -->
 <header class="w-full bg-white text-black dark:bg-black dark:text-white">
     <div class="flex flex-col items-center py-12">
-        <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="/">
+        <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="{{ site.baseurl }}/">
             {{ site.title }}
         </a>
         <p class="text-lg text-gray-600">
@@ -44,7 +44,7 @@
             class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
            
            {% for cat in site.menu_categories %}
-            <a href="/category/{{ cat }}/" class="hover:bg-gray-200 hover:dark:bg-gray-800 rounded py-2 px-4 mx-2">{{ cat }}</a>
+            <a href="{{ site.baseurl }}/category/{{ cat }}/" class="hover:bg-gray-200 hover:dark:bg-gray-800 rounded py-2 px-4 mx-2">{{ cat }}</a>
             {% endfor %}
         </div>
     </div>
