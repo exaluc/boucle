@@ -18,7 +18,20 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  animation: fadeIn ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
+
+@keyframes fadeIn {
+  0% {
+    color: #000;
+  }
+  100% {
+    color: #fff;
+  }
+}
+
 
 p {
   white-space: pre-line;
