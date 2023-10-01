@@ -61,9 +61,10 @@ The theme is available as open source under the terms of the [MIT License](https
 
 Everyone interacting in the Boucle project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/exaluc/boucle/blob/main/CODE_OF_CONDUCT.md).
 
-## Meta
 
-Lucian – [@exaluc](https://twitter.com/exaluc)
+## Author
+
+- [Lucian BLETAN](https://github.com/exaluc)
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
